@@ -1,0 +1,32 @@
+html, body, div[role=main], div.wrapper {
+  height: 100%;
+  margin: 0; }
+
+.wrapper {
+  display: flex;
+  flex-direction: row; }
+
+* {
+  box-sizing: border-box; }
+
+#comments {
+  min-width: 600px;
+  height: 100%;
+  background: #ddd; }
+
+#posts, #comments {
+  height: 100%;
+  overflow: scroll; }
+
+article.post {
+  display: block; }
+
+.comment {
+  background: red; }
+
+@media screen and (max-width: 360px) {
+  body {
+    background: pink; } }
+@media screen and (max-width: 1024px) {
+  #comments {
+    display: none; } }
