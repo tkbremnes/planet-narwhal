@@ -29,6 +29,7 @@ html, body, div[role=main], div.wrapper {
 
 
 article.post {
+  background: blue;
   display: block;
 
   img {
@@ -36,7 +37,7 @@ article.post {
   }
 }
 
-.comment {
+article.comment {
   background: red;
 }
 
@@ -49,5 +50,18 @@ article.post {
 @media screen and (max-width: 1024px) {
   #comments {
     display: none;
+  }
+}
+
+
+#comments {
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
   }
 }

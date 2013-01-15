@@ -19,9 +19,10 @@ html, body, div[role=main], div.wrapper {
   overflow: scroll; }
 
 article.post {
+  background: blue;
   display: block; }
 
-.comment {
+article.comment {
   background: red; }
 
 @media screen and (max-width: 360px) {
@@ -30,3 +31,10 @@ article.post {
 @media screen and (max-width: 1024px) {
   #comments {
     display: none; } }
+#comments ul {
+  margin: 0;
+  padding: 0; }
+  #comments ul li {
+    margin: 0;
+    padding: 0;
+    display: block; }

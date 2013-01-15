@@ -31,6 +31,7 @@ $(function(){
 
 
     $(post).click(function(){
+      document.getElementById('comments').innerHTML = '';
       renderComments(p);
     });
 
@@ -47,21 +48,35 @@ $(function(){
     this.render();
   }
   Comment.prototype.render = function() {
+    var c = this;
+
+    var li = document.createElement('li');
     var comment = document.createElement('article');
     var author = document.createElement('p');
     var body = document.createElement('p');
 
+    //var replies = documnet.createElement('p');
+
     author.innerHTML = this.data.author;
     author.className = 'author';
-    body.innerHTML = this.data.body;
+    body.innerHTML = _.unescape(this.data.body_html);
     body.className = 'body';
+    //replies.innerHTML = this.data.replies.data.children.length + ' replies';
+    //replies.className = 'replies';
 
     comment.appendChild(author);
     comment.appendChild(body);
+    //comment.appendChild(replies);
 
     comment.className = 'comment';
 
-    document.getElementById('comments-dest').appendChild(comment); 
+    li.appendChild(comment);
+
+    document.getElementById('comments-dest').appendChild(li); 
+
+    $(comment).click(function(){
+      alert(JSON.stringify(c));
+    });
   }
 
 
@@ -69,12 +84,17 @@ $(function(){
   function renderComments(post){
     var header = document.createElement('header');
     var title = document.createElement('h1');
+    var selftext = document.createElement('div');
+
+    var encodedStr = post.data.selftext_html;
+    $(selftext).html(_.unescape(encodedStr));
     header.appendChild(title);
+    header.appendChild(selftext);
     title.innerHTML = post.data.title;
 
     document.getElementById('comments').appendChild(header);
 
-    var dest = document.createElement('div');
+    var dest = document.createElement('ul');
     dest.id = 'comments-dest';
     dest.innerHTML = 'fetching comments ...';
 
@@ -94,7 +114,7 @@ $(function(){
     );
   }
 
-  $.getJSON('http://www.reddit.com/r/pics.json?jsonp=?',
+  $.getJSON('http://www.reddit.com/r/iama.json?jsonp=?',
     function(data){
       console.log(data);
 
