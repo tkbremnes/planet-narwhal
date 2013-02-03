@@ -82,6 +82,18 @@ $(function(){
 
 
   function renderComments(post){
+    // Slides the comments into view
+
+    var widthQuery = window.matchMedia("(max-width: 1024px)");
+    
+    if(widthQuery.matches) {
+      $('#comments').css('left', '0');
+      $('#posts').css('left', '-100%');
+    }
+
+
+
+
     var section = document.createElement('section')
     section.setAttribute('role', 'region');
     section.className = 'skin-organic';
@@ -93,6 +105,7 @@ $(function(){
     $(selftext).html(_.unescape(encodedStr));
 
     var h = document.createElement('header');
+    h.innerHTML = '<button><span class="icon icon-back">back</span></button>';
     header.appendChild(section);
     h.appendChild(title);
     section.appendChild(h);

@@ -28,6 +28,12 @@ html, body, div[role=main], div.wrapper {
 #posts, #comments {
   height: 100%;
   overflow: scroll;
+
+  -webkit-transition: left .5s;
+  -moz-transition: left .5s;
+  -ms-transition: left .5s;
+  -o-transition: left .5s;
+  transition: left .5s;
 }
 
 
@@ -55,6 +61,9 @@ article.comment {
   background: red;
 }
 
+body {
+  overflow-x: hidden;
+}
 
 @media screen and (max-width: 360px) {
   body {
@@ -63,10 +72,20 @@ article.comment {
 }
 @media screen and (max-width: 1024px) {
   #comments {
-    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 100%;
+
+    .back-button {
+      display: block
+    }
   }
 
   #posts {
+    position: absolute;
+    top:0;
+    left: 0;
     width: 100%;
     max-width: none;
     min-width: none;
