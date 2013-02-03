@@ -22,11 +22,12 @@
       <div class="wrapper">
         <div id="posts">
           <section role="region">
-<header>
-<h1>Planet Narwhal</h1>
-</header>
-</section>
+            <header>
+              <h1>/r/iAMA</h1>
+            </header>
+          </section>
         </div>
+
         <div id="comments"></div>
       </div>
     </div>
@@ -34,5 +35,20 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
+
+
+
+    <script id="template-post">
+        <h1 class="title">{{title}}</h1>
+
+        <section class="score">
+          <p><span class="score">{{score}}</span> (<span class="ups">{{ups}}</span> / <span class="downs">{{downs}}</span>)</p>
+        </section>
+        <p class="downs">{{downs}}</p>
+        
+        <p class="num_comments">{{num_comments}}</p>
+        <p class="subreddit">{{subreddit}}</p>
+
+    </script>
   </body>
 </html>

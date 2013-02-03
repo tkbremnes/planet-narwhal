@@ -38,6 +38,17 @@ article.post {
   img {
     //float: left;
   }
+
+  .score {
+
+    .ups {
+      color: rgb(240,82,54);
+    }
+
+    .downs {
+      color: rgb(55,57,192);
+    }
+  }
 }
 
 article.comment {
@@ -53,6 +64,12 @@ article.comment {
 @media screen and (max-width: 1024px) {
   #comments {
     display: none;
+  }
+
+  #posts {
+    width: 100%;
+    max-width: none;
+    min-width: none;
   }
 }
 

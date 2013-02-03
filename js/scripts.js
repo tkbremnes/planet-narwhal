@@ -1,3 +1,7 @@
+_.templateSettings = {
+      interpolate : /\{\{(.+?)\}\}/g
+    };
+
 $(function(){
 
   var posts = [];
@@ -8,26 +12,22 @@ $(function(){
 
     this.data = postdata;
 
+    this.template = $('#template-post').html();
+
     posts.push(this);
     this.render();
   }
   Post.prototype.render = function() {
+
+
     var p = this;
 
     var post = document.createElement('article');
     post.className = 'post';
 
-    var title = document.createElement('h1');
-    title.innerHTML = this.title;
-
-    var thumbnail = document.createElement('img');
-    thumbnail.src = this.thumbnail;
-
-    post.appendChild(thumbnail);
-    post.appendChild(title);
+    post.innerHTML = _.template(this.template, this.data);
 
     document.getElementById('posts').appendChild(post);
-
 
 
     $(post).click(function(){

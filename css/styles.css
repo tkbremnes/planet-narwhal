@@ -26,6 +26,10 @@ html, body, div[role=main], div.wrapper {
 article.post {
   background: #ccc;
   display: block; }
+  article.post .score .ups {
+    color: #f05236; }
+  article.post .score .downs {
+    color: #3739c0; }
 
 article.comment {
   background: red; }
@@ -35,7 +39,12 @@ article.comment {
     background: pink; } }
 @media screen and (max-width: 1024px) {
   #comments {
-    display: none; } }
+    display: none; }
+
+  #posts {
+    width: 100%;
+    max-width: none;
+    min-width: none; } }
 #comments ul {
   margin: 0;
   padding: 0; }
