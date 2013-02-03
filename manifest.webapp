@@ -1,7 +1,7 @@
 {
     "version": "1",
     "name": "Planet Narwhal",
-    "launch_path": "/index.html",
+    "launch_path": "http://localhost:8000/index.html",
     "description": "Sophisticated hello world",
     "icons": {
         "16": "/Firefox-OS-Boilerplate-App/images/logo16.png",

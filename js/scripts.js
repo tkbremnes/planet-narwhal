@@ -1,8 +1,8 @@
-_.templateSettings = {
-      interpolate : /\{\{(.+?)\}\}/g
-    };
 
 $(function(){
+  _.templateSettings = {
+    interpolate : /\{\{(.+?)\}\}/g
+  };
 
   var posts = [];
 
