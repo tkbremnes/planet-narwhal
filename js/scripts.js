@@ -107,12 +107,16 @@ $(function(){
     var h = document.createElement('header');
 
     var bck = document.createElement('button');
+    $(bck).css('display', 'none');
 
+
+    // The button should not show in tablet mode
     $(bck).on('click', function(){
-      $('#comments').empty();
-
       $('#comments').css('left', '100%');
       $('#posts').css('left', '0');
+        
+      // don't think I'll need it
+      // $('#comments').empty();
     });
 
     bck.innerHTML = '<span class="icon icon-back">back</span>';
@@ -163,6 +167,20 @@ $(function(){
       });
     }
   );
+
+
+  var opened = false;
+  $('#menu-button').on('click', function(){
+    if(opened) {
+      $('#posts').css('margin-left', '0');
+      $('#drawer').css('left', '-300px');
+    }
+    else {
+      $('#posts').css('margin-left', '300px');
+      $('#drawer').css('left', '0');
+    }
+    opened = !opened;
+  });
 
 
 });

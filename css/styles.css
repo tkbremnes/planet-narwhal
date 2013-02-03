@@ -19,14 +19,14 @@ html, body, div[role=main], div.wrapper {
   height: 100%;
   background: #ddd; }
 
-#posts, #comments {
+#posts, #comments, #drawer {
   height: 100%;
   overflow: scroll;
-  -webkit-transition: left .5s;
-  -moz-transition: left .5s;
-  -ms-transition: left .5s;
-  -o-transition: left .5s;
-  transition: left .5s; }
+  -webkit-transition: left .5s, margin-left .5s;
+  -moz-transition: left .5s, margin-left .5s;
+  -ms-transition: left .5s, margin-left .5s;
+  -o-transition: left .5s, margin-left .5s;
+  transition: left .5s, margin-left .5s; }
 
 article.post {
   background: #ccc;
@@ -42,6 +42,12 @@ article.comment {
 body {
   overflow-x: hidden; }
 
+#drawer {
+  min-width: 300px;
+  position: absolute;
+  left: -300px;
+  top: 0; }
+
 @media screen and (max-width: 360px) {
   body {
     background: pink; } }
@@ -51,8 +57,8 @@ body {
     left: 100%;
     top: 0;
     width: 100%; }
-    #comments .back-button {
-      display: block; }
+    #comments header button {
+      display: block !important; }
 
   #posts {
     position: absolute;
