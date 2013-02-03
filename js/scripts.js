@@ -105,7 +105,21 @@ $(function(){
     $(selftext).html(_.unescape(encodedStr));
 
     var h = document.createElement('header');
-    h.innerHTML = '<button><span class="icon icon-back">back</span></button>';
+
+    var bck = document.createElement('button');
+
+    $(bck).on('click', function(){
+      $('#comments').empty();
+
+      $('#comments').css('left', '100%');
+      $('#posts').css('left', '0');
+    });
+
+    bck.innerHTML = '<span class="icon icon-back">back</span>';
+
+
+    h.appendChild(bck);
+
     header.appendChild(section);
     h.appendChild(title);
     section.appendChild(h);
