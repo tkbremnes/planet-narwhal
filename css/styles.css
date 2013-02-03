@@ -15,7 +15,7 @@ html, body, div[role=main], div.wrapper {
   width: 40%; }
 
 #comments {
-  min-width: 600px;
+  min-width: 60%;
   height: 100%;
   background: #ddd; }
 
