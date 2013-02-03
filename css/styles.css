@@ -9,6 +9,11 @@ html, body, div[role=main], div.wrapper {
 * {
   box-sizing: border-box; }
 
+#posts {
+  min-width: 40%;
+  max-width: 40%;
+  width: 40%; }
+
 #comments {
   min-width: 600px;
   height: 100%;
@@ -19,7 +24,7 @@ html, body, div[role=main], div.wrapper {
   overflow: scroll; }
 
 article.post {
-  background: blue;
+  background: #ccc;
   display: block; }
 
 article.comment {

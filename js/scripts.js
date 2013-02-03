@@ -82,21 +82,34 @@ $(function(){
 
 
   function renderComments(post){
+    var section = document.createElement('section')
+    section.setAttribute('role', 'region');
+    section.className = 'skin-organic';
     var header = document.createElement('header');
     var title = document.createElement('h1');
-    var selftext = document.createElement('div');
+    var selftext = document.createElement('h2');
 
     var encodedStr = post.data.selftext_html;
     $(selftext).html(_.unescape(encodedStr));
-    header.appendChild(title);
-    header.appendChild(selftext);
+
+    var h = document.createElement('header');
+    header.appendChild(section);
+    h.appendChild(title);
+    section.appendChild(h);
+
+    var subh = document.createElement('header');
+
+    subh.appendChild(selftext);
+    section.appendChild(subh);
     title.innerHTML = post.data.title;
 
     document.getElementById('comments').appendChild(header);
 
     var dest = document.createElement('ul');
     dest.id = 'comments-dest';
-    dest.innerHTML = 'fetching comments ...';
+
+    
+    dest.innerHTML = '<section role="region"><p role="status"><progress></progress><span>Loading comments</span></p></section>';
 
     document.getElementById('comments').appendChild(dest);
 
